@@ -106,16 +106,18 @@ app.put("/career", function (req, res, next) {
 app.get("/application", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER", "HR"]);
 }, Career_1.getApplications);
-app.post("/uploadtimesheet", function (req, res, next) {
-    (0, utils_1.authMiddleware)(req, res, next, [
-        "ADMIN",
-        "ENGINEER",
-        "MARKETING",
-        "INTERN",
-        "HR",
-        "TECHNICIAN",
-    ]);
-}, User_1.uploadTimesheet);
+app.post("/uploadtimesheet",
+//  function (req, res, next) {
+//     (0, utils_1.authMiddleware)(req, res, next, [
+//         "ADMIN",
+//         "ENGINEER",
+//         "MARKETING",
+//         "INTERN",
+//         "HR",
+//         "TECHNICIAN",
+//     ]);
+// },
+ User_1.uploadTimesheet);
 app.delete("/timesheet/:id", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, [
         "ADMIN",
@@ -126,16 +128,18 @@ app.delete("/timesheet/:id", function (req, res, next) {
         "TECHNICIAN",
     ]);
 }, User_1.deletetimesheet);
-app.get("/timesheet/:id", function (req, res, next) {
-    (0, utils_1.authMiddleware)(req, res, next, [
-        "ADMIN",
-        "ENGINEER",
-        "MARKETING",
-        "INTERN",
-        "HR",
-        "TECHNICIAN",
-    ]);
-}, User_1.getTimesheet);
+app.get("/timesheet/:id",
+//  function (req, res, next) {
+//     (0, utils_1.authMiddleware)(req, res, next, [
+//         "ADMIN",
+//         "ENGINEER",
+//         "MARKETING",
+//         "INTERN",
+//         "HR",
+//         "TECHNICIAN",
+//     ]);
+// }, 
+User_1.getTimesheet);
 app.get("/timesheetactivity/:id", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER"]);
 }, User_1.getTimesheetActivity);
@@ -220,16 +224,18 @@ app.post("/addproduct", function (req, res, next) {
         "TECHNICIAN",
     ]);
 }, multer({ dest: "./public/products" }).any("uploadedproduct", 2), product_1.addproduct);
-app.post("/upload/faq", function (req, res, next) {
-    (0, utils_1.authMiddleware)(req, res, next, [
-        "ADMIN",
-        "ENGINEER",
-        "MARKETING",
-        "INTERN",
-        "HR",
-        "TECHNICIAN",
-    ]);
-}, product_1.addfaq);
+app.post("/upload/faq",
+//  function (req, res, next) {
+//     (0, utils_1.authMiddleware)(req, res, next, [
+//         "ADMIN",
+//         "ENGINEER",
+//         "MARKETING",
+//         "INTERN",
+//         "HR",
+//         "TECHNICIAN",
+//     ]);
+// }, 
+product_1.addfaq);
 app.post("/upload/image", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, [
         "ADMIN",

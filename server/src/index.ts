@@ -241,16 +241,16 @@ app.delete(
 );
 app.get(
   "/timesheet/:id",
-  (req: Request, res: Response, next: NextFunction) => {
-    authMiddleware(req, res, next, [
-      "ADMIN",
-      "ENGINEER",
-      "MARKETING",
-      "INTERN",
-      "HR",
-      "TECHNICIAN",
-    ]);
-  },
+  // (req: Request, res: Response, next: NextFunction) => {
+  //   authMiddleware(req, res, next, [
+  //     "ADMIN",
+  //     "ENGINEER",
+  //     "MARKETING",
+  //     "INTERN",
+  //     "HR",
+  //     "TECHNICIAN",
+  //   ]);
+  // },
   getTimesheet
 );
 app.get(
@@ -376,16 +376,16 @@ app.post(
 );
 app.post(
   "/upload/faq",
-  (req: Request, res: Response, next: NextFunction) => {
-    authMiddleware(req, res, next, [
-      "ADMIN",
-      "ENGINEER",
-      "MARKETING",
-      "INTERN",
-      "HR",
-      "TECHNICIAN",
-    ]);
-  },
+  // (req: Request, res: Response, next: NextFunction) => {
+  //   authMiddleware(req, res, next, [
+  //     "ADMIN",
+  //     "ENGINEER",
+  //     "MARKETING",
+  //     "INTERN",
+  //     "HR",
+  //     "TECHNICIAN",
+  //   ]);
+  // },
   addfaq
 );
 app.post(

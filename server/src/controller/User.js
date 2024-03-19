@@ -181,12 +181,12 @@ function login(req, res) {
 exports.login = login;
 function uploadTimesheet(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var _a, starttime, endtime, noOfhours, description, updatedOn, activity, err_4, err_5;
+        var _a, starttime, endtime, noOfhours,userid, description, updatedOn, activity, err_4, err_5;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     _b.trys.push([0, 5, , 6]);
-                    _a = req.body, starttime = _a.starttime, endtime = _a.endtime, noOfhours = _a.noOfhours, description = _a.description, updatedOn = _a.updatedOn, activity = _a.activity;
+                    _a = req.body, starttime = _a.starttime, endtime = _a.endtime, noOfhours = _a.noOfhours,userid = _a.userid, description = _a.description, updatedOn = _a.updatedOn, activity = _a.activity;
                     _b.label = 1;
                 case 1:
                     _b.trys.push([1, 3, , 4]);
@@ -197,7 +197,7 @@ function uploadTimesheet(req, res) {
                             endtime,
                             noOfhours,
                             updatedOn,
-                            req.user.userid,
+                            userid,
                             description,
                         ])];
                 case 2:
@@ -205,6 +205,7 @@ function uploadTimesheet(req, res) {
                     return [3 /*break*/, 4];
                 case 3:
                     err_4 = _b.sent();
+                    console.log("error while adding data")
                     return [2 /*return*/, res.json({ message: err_4.message }).end()];
                 case 4: return [3 /*break*/, 6];
                 case 5:
@@ -383,15 +384,17 @@ exports.ApproveLeave = ApproveLeave;
 function ChangePass(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var password;
+        var userid;
         var _this = this;
         return __generator(this, function (_a) {
             password = req.body.password;
+            userid = req.body.userid;
             bcrypt.hash(password, 10).then(function (hash) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4 /*yield*/, postgres_1.default.query("UPDATE usertable SET password = $1 WHERE userid = $2", [
                                 hash,
-                                req.user.userid,
+                                userid,
                             ])];
                         case 1:
                             _a.sent();

@@ -102,11 +102,14 @@ export async function login(req: Request, res: Response) {
 }
 
 export async function uploadTimesheet(req: Request, res: Response) {
+  console.log(req)
+  console.log(req.user)
   try {
     const {
       starttime,
       endtime,
       noOfhours,
+      userid,
       description,
       updatedOn,
       activity,
@@ -121,11 +124,12 @@ export async function uploadTimesheet(req: Request, res: Response) {
           endtime,
           noOfhours,
           updatedOn,
-          req.user.userid,
+          userid,
           description,
         ]
       );
     } catch (err) {
+      console.log("error while adding data")
       return res.json({ message: err.message }).end();
     }
   } catch (err) {
@@ -225,11 +229,11 @@ export async function ApproveLeave(req: Request, res: Response) {
 }
 
 export async function ChangePass(req: Request, res: Response) {
-  const { password } = req.body;
+  const { password,userid } = req.body;
   bcrypt.hash(password, 10).then(async (hash: any) => {
     await client.query("UPDATE usertable SET password = $1 WHERE userid = $2", [
       hash,
-      req.user.userid,
+      userid,
     ]);
   });
 

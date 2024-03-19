@@ -13,7 +13,7 @@ const LeaveAdmin = () => {
   const [datas, setDatas] = useState<Leave[]>([]);
   const { auth } = useContext(Usercontext);
   const handledelete = (id: any) => {
-    var axios = require("axios");
+    
 
     var config = {
       method: "delete",
@@ -33,6 +33,8 @@ const LeaveAdmin = () => {
       });
   };
   useEffect(() => {
+    console.log(auth?.user?.userid)
+    console.log(auth?.token)
     var config = {
       method: "get",
       url: process.env.REACT_APP_BACKEND_URL + `/leave/${auth?.user?.userid}`,
@@ -77,7 +79,7 @@ const LeaveAdmin = () => {
       url: process.env.REACT_APP_BACKEND_URL + "/approveleave",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        authorization: auth?.token,
+        // authorization: auth?.token,
       },
       data: data,
     };

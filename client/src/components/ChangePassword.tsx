@@ -15,6 +15,7 @@ const ChangePassword = () => {
       var qs = require("qs");
       var data = qs.stringify({
         password,
+        userid:auth?.user?.userid
       });
       var config = {
         method: "post",

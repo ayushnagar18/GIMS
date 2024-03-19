@@ -24,7 +24,7 @@ const ProductPage = () => {
 
 
   const handledelete = (id: any) => {
-    // var axios = require("axios");
+    
 
     var config = {
       method: "delete",
@@ -44,7 +44,7 @@ const ProductPage = () => {
       });
   };
   useEffect(() => {
-    // var axios = require("axios");
+    
 
     var config = {
       method: "get",

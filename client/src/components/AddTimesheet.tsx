@@ -44,7 +44,7 @@ const AddTimesheet = () => {
       url:
         process.env.REACT_APP_BACKEND_URL + `/timesheet/${auth?.user?.userid}`,
       headers: {
-        authorization: auth?.token,
+        // authorization: auth?.token,
       },
     };
 
@@ -64,6 +64,7 @@ const AddTimesheet = () => {
       starttime: startDate,
       endtime: endDate,
       noOfhours: duration,
+      userid:auth?.user?.userid,
       description,
       activity,
       updatedOn: new Date().toISOString(),
@@ -81,7 +82,7 @@ const AddTimesheet = () => {
     axios(config)
       .then(function (response: any) {
         alert(JSON.stringify(response.data));
-        window.location.reload();
+        // window.location.reload();
       })
       .catch(function (error: any) {
         console.log(error);

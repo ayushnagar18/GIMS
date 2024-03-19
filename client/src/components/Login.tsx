@@ -24,6 +24,7 @@ const Login = () => {
     var data = qs.stringify({
       email,
       password,
+      
     });
     console.log("2nd time")
     var config = {
@@ -45,7 +46,6 @@ const Login = () => {
            );
            console.log(response.data)
            localStorage.setItem("email",response.data.user.emailid)
-           localStorage.setItem("userid",response.data.user.userid)
            navigate("/admin");
          }
          window.location.reload();

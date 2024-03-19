@@ -1,0 +1,87 @@
+.banneradmin-sec {
+  height: 32vh;
+  background-position: bottom;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav-tab .nav-link {
+  color: white !important;
+  border-radius: 5px;
+  height: 50px;
+  width:15rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#nav-tab .nav-link.active {
+  background-color: black;
+  padding: 12px;
+  margin-right: 2px;
+  border-radius: 5px;
+  height: 40px;
+}
+.body-tab-admin{
+  color:white !important;
+  font-family: roboto;
+}
+.body-tab-admin:hover{
+  color:yellow !important;
+}
+
+.banneradmin-sec .img-for-admin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banneradmin-sec div h4{
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.btn-admin{
+  width:150px;
+  height: 50px;
+  margin-left: 60px;
+  font-weight: 600;
+  font-family: poppins;
+  border-radius: 2rem;
+  color: white;
+  border:none;
+  background-color: #ff2dfa;
+  background-image: linear-gradient(90deg, #ff2dfa 0%, #fb81f0 30%, #fbd186 66%, #ffaf28 100%);
+  transition: background-color 2s, background-image 2s;
+}
+
+.btn-admin:hover{
+  background-color: #ffaf28;
+  background-image: linear-gradient(90deg, #ffaf28 0%, #fbd186 30%, #fb81f0 66%, #ff2dfa 100%);
+  border: 2px solid rgb(248, 216, 37);
+}
+.admin-block{
+  display: flex;
+  flex-direction: row;
+  margin-top: 61px;
+  background-color: #ffffff;
+  min-height: 91.5vh;
+}
+.tab-sec2{
+  flex: 1;
+  background-color: #393e45;
+  position: fixed;
+}
+
+.admin-btn-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+@media screen and (max-width:768px){
+  .admin-btn-form{
+    flex-direction: row;
+  }
+}

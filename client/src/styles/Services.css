@@ -1,0 +1,133 @@
+.bannerser-sec {
+    background: linear-gradient(rgba(49, 49, 49, 0.6),rgba(49, 49, 49, 0.6)),url(../assets/services/services-main.jpg);
+    height: 90vh;
+    background-position: bottom;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+.btn-services{
+    width:170px;
+    height:2.5rem;
+    border-radius:5px;
+    background-color:rgb(49, 109, 187);
+    font-size: 15px;
+    border:none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.btn-services:hover{
+    
+    font-weight: 500;
+    /* font-family: system-ui; */
+    background-color: rgb(38, 115, 216);
+    transform: translateY(-2px);
+    /* box-shadow: 5px 3px 10px -3px rgb(9, 164, 211); */
+}
+
+.card-img-top{
+    height: 320px;
+    
+}
+.modal-header{border: 0;}
+.modal-body img{height: 200px;}
+.modal-body {padding-top: 0;}
+div#myModal {
+    padding: 0 !important;
+}
+.close {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 0.5;
+    color: var(--font1) !important;
+    opacity: 1;
+}
+.txt-ser{
+    font-size: 32px;
+    color:black;
+    text-align: center;
+    font-weight: 600;
+    font-family: roboto;
+
+}
+.btn-transition{
+    width:160px;
+    border-radius:3rem;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color:rgb(255, 255, 255);
+    border:2px solid rgb(0, 0, 0);
+    color:black;
+    
+}
+.btn-transition:hover,.btn-transition:focus{
+    background-color: rgb(0, 0, 0);
+    color:rgb(252, 250, 250);
+    border:2px solid rgb(0, 0, 0);
+    animation: gradientTransition 1s ;
+}
+.industry-sec .container .row{
+    margin-top: 0;
+    padding-top:35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes gradientTransition {
+    0% {
+        background-color:#fffefe ;
+    }
+    100% {
+        background-color: rgb(0, 0, 0);
+        color:white;
+        
+        
+    }
+}
+.services-and-support{
+    background: #f7f4ff;
+}
+.card-full-service:hover {
+    
+    box-shadow: 0px 5px 15px -5px black;
+}
+
+@media (max-width: 768px){
+.nav-item .txt-3-dp{font-size: 22px !important;}
+.txt-3-wt{font-size: 20px !important;}
+}
+@media (max-width: 767px){
+.bannerser-sec br{display: none;}
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 735px;
+}
+.modal-content {
+    padding: 10px;
+}
+}
+@media (max-width: 575px){
+.modal-dialog {
+    position: absolute;
+    bottom: 0;
+}
+}
+@media screen and (max-width:772px){
+    .bannerser-sec .container .row .text-center h2{
+        font-size: 2rem;
+    }
+    .bannerser-sec .container .row .text-center p{
+        font-size: 1rem;
+    }
+    .txt-ser{
+        font-size: 20px;
+    }
+}

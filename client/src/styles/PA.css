@@ -1,0 +1,47 @@
+/* .carousel-container {
+    background:#F8F6F4;
+    display: flex;
+    justify-content: center;
+    width:100%;
+    margin:0 auto;
+    overflow: hidden;
+}
+
+
+
+.carousel-image {
+   
+    max-height: 90vh;
+    height: auto;
+
+} */
+
+.carousel-item img{
+    
+    
+}
+.carousel{
+    
+}
+
+.carousel-control-prev-icon{
+    background-color: transparent;
+}
+.carousel-control-next-icon{
+    background-color: transparent;
+    
+}
+.c-item{
+    height: 550px;
+}
+.c-img{
+    height: 100%;
+    
+    filter: brightness(0.8);
+}
+
+@media screen and(max-width:500px){
+    .c-img{
+        height: 50%;
+    }
+}

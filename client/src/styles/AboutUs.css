@@ -1,0 +1,249 @@
+.txt-abt{
+  font-size: 55px;
+  line-height: 56px;
+  font-weight: 600;
+  text-align: center;
+}
+.fw-abt{
+    text-align: center;
+    font-style: italic;
+}
+.bannerabt-sec{
+    height: 100vh;
+    background-position: center;
+    background: linear-gradient(rgba(27, 27, 27, 0.5),rgba(27, 27, 27, 0.5)),url("../assets/Aboutus/banner.png") !important; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white
+}
+/* blockquote {
+    font-family: Georgia, serif;
+    text-align: justify;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+}
+
+blockquote:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 3em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+    /*float:right;*/
+    /* font-size:3em;
+    line-height: 1;
+    right:45%;
+    bottom:-0.5em;
+    content: "\201D"; */
+/* }  */
+.we-do-it-sec{
+    padding-bottom:0;
+}
+.we-do-it-sec h2{
+    letter-spacing: 9.75px;
+}
+.we-do-it-sec h3{
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.we-1{background-image: url("../assets/Aboutus/write.png");}
+.we-2{background-image: url("../assets/Aboutus/weld.png");}
+.we-3{background-image: url("../assets/Aboutus/notes.png");}
+.we-4{background-image: url("../assets/Aboutus/automate.png");}
+
+.we-design{padding: 0;}
+
+.we-design-main{
+    background-size: cover;
+    width: 100%;
+    max-height: 545px;
+    height: 545px;
+    transition: all 0.35s cubic-bezier(0.12, 0.75, 0.4, 1);
+    -webkit-transition: all 0.35s cubic-bezier(0.12, 0.75, 0.4, 1);
+}
+.we-design-main {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 10px 0px var(--border);
+    transition: all 0.35s cubic-bezier(0.12, 0.75, 0.4, 1);
+    -webkit-transition: all 0.35s cubic-bezier(0.12, 0.75, 0.4, 1);
+}
+.we-design-main h3 {
+    position: absolute !important;
+    transform: rotate(-90deg);
+    right: 70px;
+    width: 0;
+    bottom: -10px;
+    padding: 0;
+}
+
+.we-design-main:before {
+    content: "";
+    position: absolute;
+    background: #00000096;
+    width: 100%;
+    height: 100%;
+}
+.we-design:hover .we-design-main:before {
+    background: #0006;
+}
+.we-design:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 10px 0px var(--border);
+    transition: all 0.35s cubic-bezier(0.12, 0.75, 0.4, 1);
+    -webkit-transition: all 0.35s cubic-bezier(0.12, 0.75, 0.4, 1);
+}
+
+/*border-box*/
+/* .app-main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.app-box {
+    width: 25%;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    border-right: 0;
+}
+.app-main .app-box:last-child{border-right: 2px solid var(--primary);}
+
+.app-main .app-box img{width: 100px;}
+.app-main .app-box h3{padding-top: 1.5rem;font-size: 36px;}
+
+.app-main .right-arrow {
+    position: relative;
+}
+.app-main .right-arrow:after {
+    content: '';
+    display: block;  
+    position: absolute;
+    left: 99.2%;
+    top: -110px;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 35px solid var(--white);
+}
+.app-main .right-arrow:before {
+    content: '';
+    display: block;  
+    position: absolute;
+    left: 100%;
+    top: -110px;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 35px solid var(--primary);
+} */
+
+
+
+/* For Vertical Timeline */
+.app-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.app-box{
+    position:relative;
+    padding: 20px;
+    background: color #f0f0f0; ;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+.app-box:hover{
+    background-color: #3498db;
+
+}
+.app-box img{
+    max-width:100px;
+}
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #3498db; /* Match the timeline color */
+  }
+  
+  .app-box:last-child .right-arrow {
+    display: none; /* Hide the arrow on the last box */
+  }
+
+/**/
+
+
+@media screen and (max-width: 600px){
+    .we-design{margin-bottom: 15px;}
+    .app-main .app-box img{width: 30px;}
+    .app-main .app-box h3 {
+        padding-top: 1rem;
+        font-size: 22px;
+    }
+    .app-main .right-arrow:after {
+        top: -60px;
+        left: 98%;
+        border-top: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        border-left: 25px solid var(--white);
+    }
+    .app-main .right-arrow:before {
+        top: -60px;
+        border-top: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        border-left: 25px solid var(--primary);
+    }
+    p br{display: none;}
+}
+@media screen and (max-width: 768px){
+    .app-main .app-box {
+        width: 33%;
+    }
+}
+.approach-sec{
+   
+    background-color: rgb(155 158 255 / 23%);
+    margin-top: 0;
+    padding-top: 2rem;
+
+}
+@media screen and (max-width:500px){
+    .txt-abt{
+        font-size: 27px;
+        line-height: 30px;
+        
+    }
+    .fw-abt{
+        font-size: 15px;
+    }
+    .approach-sec .container .row .text-center p{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,87 @@
+body {
+  overflow-x: hidden;
+}
+.loginform {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(29, 29, 29, 0.6),rgba(29, 29, 29, 0.6)),url("../assets/Home/product-design-bnr.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.forgotpass{
+  border-radius: 10px;
+}
+.forgotpass :hover{
+  cursor: pointer !important;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+.login-logo{
+  margin:1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-design{
+  height:50px;
+  width:50px;
+}
+.form-control-login{
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    border:none;
+    background-color: #ffffff00 ;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+}
+form-control-login:placeholder{
+  color:black;
+}
+.card-login{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 100vh;
+    word-wrap: break-word;
+    background-color: #ffffffbb;
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    /* border-radius: 5px; */
+}
+.btn-login{
+  
+  display: flex;
+  justify-content: center;
+  padding:1rem;
+  width: 100%;
+  border-radius: 3rem;
+  background-color: #ff3366;
+  font-weight: 500;
+  font-size: 22px;
+  color:white;
+  margin-bottom: 0;
+
+}
+.btn-login:hover{
+  background-color: black;
+}
+.input-login-sec{
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width:768px){
+  .loginform{
+    background: none;
+  }
+}
+
+

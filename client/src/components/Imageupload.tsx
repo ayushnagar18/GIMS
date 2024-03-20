@@ -61,7 +61,7 @@ const Imageupload = () => {
           console.log(error);
         });
     });
-    // window.location.reload();
+    window.location.reload();
   };
 
   const handleSubmit2 = async (e: React.FormEvent<HTMLFormElement>) => {

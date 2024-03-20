@@ -26,14 +26,26 @@ export const authMiddleware = async (
   roles: any
 ) => {
   try {
-    const token = req.headers.authorization;
+    const tokenIdx = req.rawHeaders.indexOf('authorization');
+
+    let token;
+    if (tokenIdx !== -1) {
+      token = req.rawHeaders[tokenIdx + 1];
+    }
+    // console.log("token page  : ", token)
     if (!token) {
       throw new Error("Auth failed");
     }
-    const decodedToken = jwt.verify(
-      token,
-      process.env.JWT_SECRET || "secret"
-    ) as any;
+    let decodedToken;
+    try {
+      decodedToken = jwt.verify(
+        token,
+        process.env.JWT_SECRET || "secret"
+      ) as any;
+    } catch (error) {
+      console.error("Error verifying token:", error);
+    }
+
     if (roles.includes(decodedToken.user.role)) {
       req.user = await decodedToken.user;
       next();

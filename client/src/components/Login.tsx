@@ -19,7 +19,7 @@ const Login = () => {
   const handlelogin = (event: any) => {
     console.log("hello")
     event.preventDefault();
-    // var axios = require("axios");
+    
     var qs = require("qs");
     var data = qs.stringify({
       email,
@@ -36,9 +36,7 @@ const Login = () => {
     axios(config)
        .then(function (response: any) {
          alert(JSON.stringify(response.data.message));
-         console.log(response)
          if (response.data.user) {
-          console.log(response.data.token)
            cookies.set(
              "auth",
              { token: response.data.token, user: response.data.user },

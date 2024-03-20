@@ -78,7 +78,7 @@ const Products = () => {
   return (
     <Fragment>
       <NavBar />
-      <ProductPage />
+      {/* <ProductPage /> */}
       <section className="PA-class" style={{height:'100vh',backgroundColor:'#F8F6F4'}}>
         <PA />
       </section>

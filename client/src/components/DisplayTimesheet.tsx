@@ -42,7 +42,7 @@ const DisplayTimesheet = () => {
       method: "get",
       url: process.env.REACT_APP_BACKEND_URL + `/timesheet/${id}`,
       headers: {
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
     };
 
@@ -57,7 +57,7 @@ const DisplayTimesheet = () => {
       method: "get",
       url: process.env.REACT_APP_BACKEND_URL + `/timesheetactivity/${id}`,
       headers: {
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
     };
 

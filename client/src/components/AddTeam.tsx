@@ -64,7 +64,7 @@ const AddTeam = () => {
       data: data,
       headers: {
         "Content-Type": "multipart/form-data; ",
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
     };
 

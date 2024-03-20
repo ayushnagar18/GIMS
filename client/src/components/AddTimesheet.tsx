@@ -44,7 +44,7 @@ const AddTimesheet = () => {
       url:
         process.env.REACT_APP_BACKEND_URL + `/timesheet/${auth?.user?.userid}`,
       headers: {
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
     };
 
@@ -74,7 +74,7 @@ const AddTimesheet = () => {
       url: process.env.REACT_APP_BACKEND_URL + "/uploadtimesheet",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
       data: data,
     };
@@ -82,7 +82,7 @@ const AddTimesheet = () => {
     axios(config)
       .then(function (response: any) {
         alert(JSON.stringify(response.data));
-        // window.location.reload();
+        window.location.reload();
       })
       .catch(function (error: any) {
         console.log(error);

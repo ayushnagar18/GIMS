@@ -134,6 +134,7 @@ function getproducts(_, res) {
     return __awaiter(this, void 0, void 0, function () {
         var team;
         return __generator(this, function (_a) {
+            console.log("get product called")
             switch (_a.label) {
                 case 0: return [4 /*yield*/, postgres_1.default.query("SELECT * FROM product ORDER BY serialno ASC;")];
                 case 1:
@@ -150,6 +151,7 @@ function getproduct(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    console.log("product id called id : " ,req.params.id)
                     id = req.params.id;
                     return [4 /*yield*/, postgres_1.default.query("SELECT * FROM product WHERE id = $1;", [
                             id,

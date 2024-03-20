@@ -76,7 +76,7 @@ const AddProduct = () => {
       url: process.env.REACT_APP_BACKEND_URL + "/addproduct",
       data: data,
       headers: {
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
     };
 

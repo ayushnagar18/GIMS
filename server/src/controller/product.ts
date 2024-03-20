@@ -99,6 +99,7 @@ export async function updateproduct(req: Request, res: Response) {
   return res.status(200).json({ message: "Product Updated" });
 }
 export async function getproducts(_: Request, res: Response) {
+  
   const team = await client.query(
     "SELECT * FROM product ORDER BY serialno ASC;"
   );

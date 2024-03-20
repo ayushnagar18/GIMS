@@ -60,9 +60,9 @@ app.post("/forgotpassword", User_1.getPasswordOTP);
 app.post("/resetpassword", User_1.resetPassword);
 app.post("/completeTask", Services_1.completeTask);
 app.post("/addservice", 
-// function (req, res, next) {
-//     (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER", "TECHNICIAN"]);
-// }, 
+function (req, res, next) {
+    (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER", "TECHNICIAN"]);
+}, 
 multer({ dest: "./public/services" }).any("serviceImg", 10), Services_1.addService);
 app.get("/requirement",
  function (req, res, next) {
@@ -107,16 +107,16 @@ app.get("/application", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER", "HR"]);
 }, Career_1.getApplications);
 app.post("/uploadtimesheet",
-//  function (req, res, next) {
-//     (0, utils_1.authMiddleware)(req, res, next, [
-//         "ADMIN",
-//         "ENGINEER",
-//         "MARKETING",
-//         "INTERN",
-//         "HR",
-//         "TECHNICIAN",
-//     ]);
-// },
+ function (req, res, next) {
+    (0, utils_1.authMiddleware)(req, res, next, [
+        "ADMIN",
+        "ENGINEER",
+        "MARKETING",
+        "INTERN",
+        "HR",
+        "TECHNICIAN",
+    ]);
+},
  User_1.uploadTimesheet);
 app.delete("/timesheet/:id", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, [
@@ -129,22 +129,7 @@ app.delete("/timesheet/:id", function (req, res, next) {
     ]);
 }, User_1.deletetimesheet);
 app.get("/timesheet/:id",
-//  function (req, res, next) {
-//     (0, utils_1.authMiddleware)(req, res, next, [
-//         "ADMIN",
-//         "ENGINEER",
-//         "MARKETING",
-//         "INTERN",
-//         "HR",
-//         "TECHNICIAN",
-//     ]);
-// }, 
-User_1.getTimesheet);
-app.get("/timesheetactivity/:id", function (req, res, next) {
-    (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER"]);
-}, User_1.getTimesheetActivity);
-app.post("/applyleave", User_1.applyLeave);
-app.get("/leave/:id", function (req, res, next) {
+ function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, [
         "ADMIN",
         "ENGINEER",
@@ -153,7 +138,24 @@ app.get("/leave/:id", function (req, res, next) {
         "HR",
         "TECHNICIAN",
     ]);
-}, User_1.getLeave);
+}, 
+User_1.getTimesheet);
+app.get("/timesheetactivity/:id", function (req, res, next) {
+    (0, utils_1.authMiddleware)(req, res, next, ["ADMIN", "ENGINEER"]);
+}, User_1.getTimesheetActivity);
+app.post("/applyleave", User_1.applyLeave);
+app.get("/leave/:id", 
+function (req, res, next) {
+    (0, utils_1.authMiddleware)(req, res, next, [
+        "ADMIN",
+        "ENGINEER",
+        "MARKETING",
+        "INTERN",
+        "HR",
+        "TECHNICIAN",
+    ]);
+},
+ User_1.getLeave);
 app.delete("/leave/:id", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, [
         "ADMIN",
@@ -225,16 +227,16 @@ app.post("/addproduct", function (req, res, next) {
     ]);
 }, multer({ dest: "./public/products" }).any("uploadedproduct", 2), product_1.addproduct);
 app.post("/upload/faq",
-//  function (req, res, next) {
-//     (0, utils_1.authMiddleware)(req, res, next, [
-//         "ADMIN",
-//         "ENGINEER",
-//         "MARKETING",
-//         "INTERN",
-//         "HR",
-//         "TECHNICIAN",
-//     ]);
-// }, 
+ function (req, res, next) {
+    (0, utils_1.authMiddleware)(req, res, next, [
+        "ADMIN",
+        "ENGINEER",
+        "MARKETING",
+        "INTERN",
+        "HR",
+        "TECHNICIAN",
+    ]);
+}, 
 product_1.addfaq);
 app.post("/upload/image", function (req, res, next) {
     (0, utils_1.authMiddleware)(req, res, next, [

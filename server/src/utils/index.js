@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function () { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -37,35 +37,56 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateOTP = exports.submitTaskMail = exports.completeTaskMail = exports.sendForgotResetMail = exports.authMiddleware = void 0;
-var jsonwebtoken_1 = require("jsonwebtoken");
+var jwt = require("jsonwebtoken");
 var mail_1 = require("./mail");
-var authMiddleware = function (req, res, next, roles) { return __awaiter(void 0, void 0, void 0, function () {
-    var token, decodedToken, _a, err_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 4, , 5]);
-                token = req.headers.authorization;
-                if (!token) {
-                    throw new Error("Auth failed");
-                }
-                decodedToken = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET || "secret");
-                if (!roles.includes(decodedToken.user.role)) return [3 /*break*/, 2];
-                _a = req;
-                return [4 /*yield*/, decodedToken.user];
-            case 1:
-                _a.user = _b.sent();
-                next();
-                return [3 /*break*/, 3];
-            case 2: return [2 /*return*/, res.status(403).json({ message: "Unauthorized" })];
-            case 3: return [3 /*break*/, 5];
-            case 4:
-                err_1 = _b.sent();
-                return [2 /*return*/, res.status(401).json({ message: "Auth failed" })];
-            case 5: return [2 /*return*/];
-        }
+var authMiddleware = function (req, res, next, roles) {
+    return __awaiter(void 0, void 0, void 0, function () {
+        var token, decodedToken, _a, err_1;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 4, , 5]);
+
+                    const tokenIdx = req.rawHeaders.indexOf('authorization');
+
+                    let token;
+                    if (tokenIdx !== -1) {
+                        token = req.rawHeaders[tokenIdx + 1];
+                    }
+                    // console.log("token page  : ", token)
+                    if (!token) {
+                        throw new Error("Auth failed");
+                    }
+                    console.log("verifying token");
+                    let decodedToken;
+                    try {
+                        decodedToken = jwt.verify(
+                            token,
+                            process.env.JWT_SECRET || "secret"
+                        ) ;
+                        console.log("decoded token:", decodedToken);
+                    } catch (error) {
+                        console.error("Error verifying token:", error);
+                    }
+                    
+                    
+                    if (!roles.includes(decodedToken.user.role)) return [3 /*break*/, 2];
+                    _a = req;
+                    return [4 /*yield*/, decodedToken.user];
+                case 1:
+                    _a.user = _b.sent();
+                    next();
+                    return [3 /*break*/, 3];
+                case 2: return [2 /*return*/, res.status(403).json({ message: "Unauthorized" })];
+                case 3: return [3 /*break*/, 5];
+                case 4:
+                    err_1 = _b.sent();
+                    return [2 /*return*/, res.status(401).json({ message: "Auth failed" })];
+                case 5: return [2 /*return*/];
+            }
+        });
     });
-}); };
+};
 exports.authMiddleware = authMiddleware;
 var sendForgotResetMail = function (_a) {
     var name = _a.name, email = _a.email, verificationOTP = _a.verificationOTP;
@@ -76,10 +97,10 @@ var sendForgotResetMail = function (_a) {
                 case 0:
                     body = "Hello <b>".concat(name, "</b>,<br><br>\n  In case you forgot your password,<p>your OTP for reset password is\n  <strong>").concat(verificationOTP, "</strong></p>");
                     return [4 /*yield*/, (0, mail_1.mail)({
-                            email: email,
-                            sub: "Forgot your password  | Gims Pvt Ltd",
-                            body: body,
-                        })];
+                        email: email,
+                        sub: "Forgot your password  | Gims Pvt Ltd",
+                        body: body,
+                    })];
                 case 1:
                     _b.sent();
                     return [2 /*return*/];
@@ -102,10 +123,10 @@ var completeTaskMail = function (_a) {
                         body = "Requirement Name : ".concat(name, " <br> Requirement Details : ").concat(requirements, " <br>\n    Remarks : ").concat(remarks);
                     }
                     return [4 /*yield*/, (0, mail_1.mail)({
-                            email: email,
-                            sub: "Gims Pvt Ltd | Requirement Status ",
-                            body: body,
-                        })];
+                        email: email,
+                        sub: "Gims Pvt Ltd | Requirement Status ",
+                        body: body,
+                    })];
                 case 1:
                     _b.sent();
                     return [2 /*return*/];
@@ -123,10 +144,10 @@ var submitTaskMail = function (_a) {
                 case 0:
                     body = "Hello <b>".concat(name, "</b> Your requirement is submitted sucessfully. Our team will look into it and get back to you\n  <br> <b>Requirement Details :<b> ").concat(requirements);
                     return [4 /*yield*/, (0, mail_1.mail)({
-                            email: email,
-                            sub: "Gims Pvt Ltd | Requirement Submission ",
-                            body: body,
-                        })];
+                        email: email,
+                        sub: "Gims Pvt Ltd | Requirement Submission ",
+                        body: body,
+                    })];
                 case 1:
                     _b.sent();
                     return [2 /*return*/];

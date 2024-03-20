@@ -21,7 +21,7 @@ const TaskAdmin = () => {
       method: "get",
       url: process.env.REACT_APP_BACKEND_URL + `/tasks/${auth?.user?.userid}`,
       headers: {
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
     };
 

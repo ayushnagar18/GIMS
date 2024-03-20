@@ -31,9 +31,9 @@ const AddService = () => {
       method: "post",
       url: process.env.REACT_APP_BACKEND_URL + "/addservice",
       data: data,
-      // headers: {
-      //   authorization: auth?.token,
-      // },
+      headers: {
+        authorization: auth?.token,
+      },
     };
 
     axios(config)

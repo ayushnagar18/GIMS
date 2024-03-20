@@ -79,7 +79,7 @@ const LeaveAdmin = () => {
       url: process.env.REACT_APP_BACKEND_URL + "/approveleave",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        // authorization: auth?.token,
+        authorization: auth?.token,
       },
       data: data,
     };

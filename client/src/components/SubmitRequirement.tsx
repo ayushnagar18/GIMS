@@ -20,10 +20,12 @@ interface FormData {
 }
 
 const SubmitRequirement = () => {
+  const [temp, setTemp] = useState<string[]>(["1"]);
   const { id } = useParams();
   const location = useLocation();
   const { from } = location.state || {};
   const [hide, setHide] = useState(true)
+  
   useEffect(() => {
     console.log(from)
     if (from && from === "services") {
@@ -60,6 +62,9 @@ const SubmitRequirement = () => {
             requirements: response.data[0].name,
             price: response.data[0].price
           });
+          setTemp([response.data[0].price]);
+          
+         
         })
         .catch(function (error: any) {
           console.log(error);
@@ -69,7 +74,7 @@ const SubmitRequirement = () => {
 
   useEffect(() => {
     if (formData.hours) {
-      const totalPrice = parseFloat(formData.hours) * parseFloat(formData.price);
+      const totalPrice = parseFloat(formData.hours) * parseFloat(temp[0]);
       setFormData(prevState => ({
         ...prevState,
         price: totalPrice.toFixed(2)
@@ -242,7 +247,7 @@ const SubmitRequirement = () => {
               </label>
               <input
                 type="text"
-                placeholder="*Enter Your Requirements*"
+                placeholder="*Name of Machine*"
                 className="form-control-requirement"
                 name="requirements"
                 aria-describedby="requirements"

@@ -59,7 +59,7 @@ const Teammembers = ({ isAdmin }: Props) => {
   };
   return (
     <Fragment>
-      <section className="industry-secteam pb-5" style={{backgroundColor:'#e1e1e17a'}}>
+      <section className="industry-secteam pb-5" >
         <div className="container">
           <div className="row">
             {data?.map((detail: details) => (

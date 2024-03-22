@@ -33,11 +33,11 @@ const NavBar = () => {
             <div className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
             </div>
-            <div className="nav-item">
+            {/* <div className="nav-item">
               {auth && auth.user && (
-                <Link className="nav-link" to="/Admin">Admin Page</Link>
+                <Link className="nav-link" to="/Admin">Admin</Link>
               )}
-            </div>
+            </div> */}
             <div className="nav-item">
               <Link className="nav-link" to="/team">Our Team</Link>
             </div>

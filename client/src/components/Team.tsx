@@ -331,7 +331,11 @@ const Team = () => {
           </div>
         </div>
       </section> */}
-      <Teammembers />
+
+      <section style={{backgroundColor:'#e1e1e17a'}}>
+        <Teammembers />
+
+      </section>
     </Fragment>
   );
 };

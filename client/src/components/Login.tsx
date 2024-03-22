@@ -17,7 +17,7 @@ const Login = () => {
   const { setRole } = useContext(Usercontext);
 
   const handlelogin = (event: any) => {
-    console.log("hello")
+    
     event.preventDefault();
     
     var qs = require("qs");
@@ -26,7 +26,7 @@ const Login = () => {
       password,
       
     });
-    console.log("2nd time")
+    
     var config = {
       method: "post",
       url: process.env.REACT_APP_BACKEND_URL + "/login",
@@ -42,7 +42,7 @@ const Login = () => {
              { token: response.data.token, user: response.data.user },
              { path: "/" }
            );
-           console.log(response.data)
+          //  console.log(response.data)
            localStorage.setItem("email",response.data.user.emailid)
            navigate("/admin");
          }

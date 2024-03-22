@@ -298,44 +298,38 @@ const Careers = () => {
                 >
                   <div className="row justify-content-center mb-5">
                     <div className="col-xl-12 col-lg-12 col-md-12 col-12">
-                      {/* {pd.map(
+                    {pd.map(
                         (career: career) =>
                           career &&
-                          career.isactive && ( */}
-                      {/* <Fragment key={career.id}> */}
-                      <Fragment>
-                        <div
-                          className="card mt-5 text-bg-light"
-                          data-bs-toggle="modal"
-                        // data-bs-target={`#${career.id}`}
-                        >
-                          <div className="card-body">
-                            {/* <p className="txt-3-bold" style={{fontFamily:'Lato'}}>{career.title}</p> */}
-                            <p style={{ fontFamily: 'Lato' }}>Product Design</p>
-                            <p className="body-bold py-2" style={{ fontFamily: 'Arial' }}>
-                              {/* {career.description} */}
-                              We want an engineer having worked with new technology and design techniques
-                            </p>
-                            <div className="row justify-content-center">
-                              <ul className="mt-3 col-8">
-                                {/* <li>{career.type}</li> */}
-                                <li>Professional</li>
-                                {/* <li>{career.experience} experience</li> */}
-                                <li>2+years of experience</li>
-                              </ul>
-                              <a
-                                // href={`/career/${career.id}`}
-                                
-                                className="btn col-2 mt-2"
+                          career.isactive && (
+                            <Fragment key={career.id}>
+                              <div
+                                className="card mt-5 text-bg-light"
+                                data-bs-toggle="modal"
+                                data-bs-target={`#${career.id}`}
                               >
-                                Show More <FaArrowRight />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </Fragment>
-                      {/* ) */}
-                      {/* )} */}
+                                <div className="card-body">
+                                  <p className="txt-3-bold" style={{ fontFamily: 'Lato' }}>{career.title}</p>
+                                  <p className="body-bold py-2" style={{ fontFamily: 'Arial' }}>
+                                    {career.description}
+                                  </p>
+                                  <div className="row justify-content-center">
+                                    <ul className="mt-3 col-8">
+                                      <li>{career.type}</li>
+                                      <li>{career.experience} experience</li>
+                                    </ul>
+                                    <a
+                                      href={`/career/${career.id}`}
+                                      className="btn col-2 mt-2"
+                                    >
+                                      Show More <FaArrowRight />
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </Fragment>
+                          )
+                      )}
                       
                     </div>
                   </div>

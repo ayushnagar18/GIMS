@@ -233,7 +233,7 @@ const ProductPage = () => {
                       style={{ width: "18rem" }}
                       key={faq.id}
                     >
-                      <div className="card-body" style={{ background: 'rgb(129 233 190)', boxShadow: '-5px 5px 15px -5px black' }}>
+                      <div className="card-body" style={{ background: 'rgb(129 204 233)', boxShadow: '-5px 5px 15px -5px black' }}>
                         <h4 className="card-title text-primary" style={{ fontFamily: 'arial', color: '#ff5500 ' }}>
                           {faq.question}
 

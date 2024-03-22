@@ -57,14 +57,14 @@ var authMiddleware = function (req, res, next, roles) {
                     if (!token) {
                         throw new Error("Auth failed");
                     }
-                    console.log("verifying token");
+                    
                     let decodedToken;
                     try {
                         decodedToken = jwt.verify(
                             token,
                             process.env.JWT_SECRET || "secret"
                         ) ;
-                        console.log("decoded token:", decodedToken);
+                        
                     } catch (error) {
                         console.error("Error verifying token:", error);
                     }

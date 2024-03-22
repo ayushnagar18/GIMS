@@ -146,7 +146,7 @@ const Home = () => {
                 <iframe
                   width="100%"
                   height="300px"
-                  src="https://www.youtube.com/embed/SerLEXm7Z84"
+                  src="https://youtube.com/shorts/v_c3IYoOA7M?feature=shared"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   title="Embedded youtube"

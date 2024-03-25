@@ -8,6 +8,7 @@ import { FaArrowRight, FaBookOpen, FaCalendarAlt, FaCoffee, FaDollarSign, FaForw
 import axios from "axios";
 import guhan_image from "../assets/Careers/Guhan-removebg-preview.png"
 import CareerPage from "./CareerPage";
+import chennai from "../assets/Careers/photo-1582510003544-4d00b7f74220.jpg"
 
 interface Resumeform {
   name?: string;
@@ -156,7 +157,7 @@ const Careers = () => {
 
           </div>
           <div className="img-chennai">
-            <section></section>
+            <img src={chennai} alt="" />
           </div>
         </div>
 

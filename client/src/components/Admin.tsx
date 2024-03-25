@@ -239,7 +239,7 @@ const Admin = () => {
           <section className="banneradmin-sec" >
             <div>
               <div className="img-for-admin">
-                <img style={{ width: '300px', height: '250px' }} src={`${process.env.REACT_APP_BACKEND_URL}/images/${image}`} alt="React Image" />
+                <img  src={`${process.env.REACT_APP_BACKEND_URL}/images/${image}`} alt="React Image" />
               </div>
               <div >
                 <h4>{user ? user : "User"}</h4>

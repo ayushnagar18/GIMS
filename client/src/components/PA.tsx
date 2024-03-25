@@ -13,32 +13,7 @@ function PA() {
 
 
   return (
-    // <div className="carousel-container" >
-    //   <Carousel className="crsl"  showThumbs={false} autoPlay={true}  interval={3000} showStatus={false} transitionTime={1000} stopOnHover={false}>
-
-
-
-    //     <div>
-
-    //       <img src={waterjetpic} className='carousel-image' />
-    //     </div>
-    //     <div>
-    //       <img src={waterjetpic2} className='carousel-image' />
-    //     </div>
-    //     <div>
-    //       <img src={waterjetpic2} className='carousel-image' />
-    //     </div>
-    //     <div>
-    //       <img src={waterjetpic2} className='carousel-image' />
-    //     </div>
-    //     <div>
-    //       <img src={waterjetpic2} className='carousel-image' />
-    //     </div>
-
-    //   </Carousel>
-
-
-    // </div>
+    
 
     <div id="carouselExampleCaptions" className="carousel slide carousel-fade  "  >
       <div className="carousel-indicators">

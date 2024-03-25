@@ -16,13 +16,8 @@
 
 } */
 
-.carousel-item img{
-    
-    
-}
-.carousel{
-    
-}
+
+
 
 .carousel-control-prev-icon{
     background-color: transparent;
@@ -44,4 +39,5 @@
     .c-img{
         height: 50%;
     }
+    
 }

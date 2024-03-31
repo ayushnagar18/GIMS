@@ -98,7 +98,7 @@ const Services = () => {
       });
   }, []);
   const handledelete = (id: any) => {
-    var axios = require("axios");
+    // var axios = require("axios");
 
     var config = {
       method: "delete",

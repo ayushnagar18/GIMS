@@ -112,8 +112,27 @@ const EditProduct = () => {
 
     axios(config)
       .then(function (response: any) {
-        alert(response.data.message);
-        navigate("/admin");
+        // alert(response.data.message);
+        const styledAlert = document.createElement('div');
+        styledAlert.textContent = response.data.message; 
+        styledAlert.style.padding = '15px'; 
+        styledAlert.style.backgroundColor = 'rgba(0, 0, 0, 0)'; 
+        styledAlert.style.color = '#000'; 
+        styledAlert.style.border = '2px solid black';
+        styledAlert.style.borderRadius = '5px';
+        styledAlert.style.fontSize = '18px';
+        styledAlert.style.fontSize = '18px'; 
+        styledAlert.style.position = 'fixed';
+        styledAlert.style.top = '10px'; 
+        styledAlert.style.right = '10px'; 
+        
+        
+        document.body.appendChild(styledAlert);
+        // navigate("/admin");
+        setTimeout(() => {
+          styledAlert.remove();
+          navigate("/admin"); 
+        }, 2000);
       })
       .catch(function (error: any) {
         console.log(error);

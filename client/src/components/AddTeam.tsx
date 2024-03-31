@@ -70,8 +70,23 @@ const AddTeam = () => {
 
     axios(config)
       .then(function (response: any) {
-        alert("Team Member Added Successfully ....");
-        window.location.reload();
+        const styledAlert = document.createElement('div');
+        styledAlert.textContent = "Team Member Added Successfully ...."; 
+        styledAlert.style.padding = '20px'; 
+        styledAlert.style.backgroundColor = 'rgba(0, 0, 0, 0)'; 
+        styledAlert.style.color = '#000'; 
+        styledAlert.style.border = '2px solid black';
+        styledAlert.style.borderRadius = '5px';
+        styledAlert.style.fontSize = '18px'; 
+        styledAlert.style.position = 'fixed';
+        styledAlert.style.top = '60px'; 
+        styledAlert.style.right = '10px';
+        document.body.appendChild(styledAlert);
+        // alert("Team Member Added Successfully ....");
+        setTimeout(() => {
+          styledAlert.remove();
+          window.location.reload();
+        },2000);
       })
       .catch(function (error: any) {
         console.log(error);

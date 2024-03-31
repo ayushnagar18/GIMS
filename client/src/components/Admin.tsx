@@ -79,6 +79,7 @@ const Admin = () => {
                         className="nav nav-tabs nav-justified"
                         id="nav-tab"
                         role="tablist"
+                       
                       >
                         <div>
 
@@ -86,7 +87,7 @@ const Admin = () => {
                             <div >
                               {auth?.user?.role === "ADMIN" &&(
                                 <button
-                                  className="nav-link col-12"
+                                  className="nav-link col-12 admin-btn8"
                                   id="nav-menu1-tab"
                                   data-bs-toggle="tab"
                                   data-bs-target="#nav-menu1"
@@ -103,7 +104,7 @@ const Admin = () => {
                             <div >
                               {auth?.user?.role === "ADMIN" &&(
                                 <button
-                                  className="nav-link col-12"
+                                  className="nav-link col-12 admin-btn8"
                                   id="nav-menu2-tab"
                                   data-bs-toggle="tab"
                                   data-bs-target="#nav-menu2"
@@ -124,7 +125,7 @@ const Admin = () => {
                                 auth?.user?.role === "ENGINEER") &&
                                 (
                                   <button
-                                    className="nav-link col-12"
+                                    className="nav-link col-12 admin-btn8"
                                     id="nav-menu3-tab"
                                     data-bs-toggle="tab"
                                     data-bs-target="#nav-menu3"
@@ -144,7 +145,7 @@ const Admin = () => {
                                 auth?.user?.role === "HR") &&
                                 (
                                   <button
-                                    className="nav-link col-12"
+                                    className="nav-link col-12 admin-btn8"
                                     id="nav-menu4-tab"
                                     data-bs-toggle="tab"
                                     data-bs-target="#nav-menu4"
@@ -163,7 +164,7 @@ const Admin = () => {
                                 auth?.user?.role === "ADMIN" && 
                                 (
                                   <button
-                                    className="nav-link col-12"
+                                    className="nav-link col-12 admin-btn8"
                                     id="nav-menu5-tab"
                                     data-bs-toggle="tab"
                                     data-bs-target="#nav-menu5"
@@ -179,7 +180,7 @@ const Admin = () => {
                             </div>
                             <div >
                               <button
-                                className="nav-link col-12"
+                                className="nav-link col-12 admin-btn8"
                                 id="nav-menu6-tab"
                                 data-bs-toggle="tab"
                                 data-bs-target="#nav-menu6"
@@ -194,7 +195,7 @@ const Admin = () => {
                             </div>
                             <div >
                               <button
-                                className="nav-link col-12"
+                                className="nav-link col-12 admin-btn8"
                                 id="nav-menu7-tab"
                                 data-bs-toggle="tab"
                                 data-bs-target="#nav-menu7"
@@ -209,7 +210,7 @@ const Admin = () => {
                             </div>
                             <div >
                               <button
-                                className="nav-link col-12"
+                                className="nav-link col-12 admin-btn8"
                                 id="nav-menu8-tab"
                                 data-bs-toggle="tab"
                                 data-bs-target="#nav-menu8"
@@ -253,9 +254,9 @@ const Admin = () => {
 
           </section>
 
-          <section style={{ height: "20%" }}></section>
+          <section className="heightsec-admin" ></section>
 
-          <section style={{ marginLeft: "20rem" }}>
+          <section className="admin-addform" >
             <div className="tab-content" id="nav-tabContent">
               {
                 auth?.user?.role === "ADMIN" && 

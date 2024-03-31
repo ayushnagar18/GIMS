@@ -35,7 +35,23 @@ const Login = () => {
     };
     axios(config)
        .then(function (response: any) {
-         alert(JSON.stringify(response.data.message));
+        const styledAlert = document.createElement('div');
+         styledAlert.textContent = response.data.message;
+         styledAlert.style.padding = '20px';
+         styledAlert.style.fontSize = '25px';
+         styledAlert.style.backgroundColor = 'rgba(0, 0, 0, 0)'; 
+         styledAlert.style.color = '#fff'; 
+         styledAlert.style.border = '2px solid white';
+         styledAlert.style.borderRadius = '5px';
+         styledAlert.style.position = 'fixed';
+         styledAlert.style.top = '10px'; 
+         styledAlert.style.right = '10px'; 
+         document.body.appendChild(styledAlert);
+         
+         setTimeout(() => {
+          
+           styledAlert.remove();
+        //  alert(JSON.stringify(response.data.message));
          if (response.data.user) {
            cookies.set(
              "auth",
@@ -48,6 +64,7 @@ const Login = () => {
          }
          window.location.reload();
          setRole({ token: response.data.token, user: response.data.user });
+        },2000);
        })
        .catch(function (error: any) {
          alert(error);

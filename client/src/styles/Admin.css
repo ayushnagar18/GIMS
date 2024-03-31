@@ -83,12 +83,23 @@
   height: 250px;
   width: 300px;
 }
-
+.admin-addform{
+  margin-left: 18rem;
+}
+.heightsec-admin{
+  height: 20%;
+}
 
 @media screen and (max-width:768px){
-  .admin-btn-form{
-    flex-direction: row;
+  .admin-btn-form {
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    z-index: 5;
   }
+  
   .banneradmin-sec div h4 {
     margin-left: 50px;
   }
@@ -101,7 +112,23 @@
   .btn-admin{
     margin-left: 20px;
   }
-  .banneradmin-sec{
+  .banner-sec{
     margin-top: 40%;
+  }
+  .body-tab-admin{
+    font-size: 15px;
+  }
+  .admin-btn8{
+    height: 30px !important;
+    width: 11.5rem !important;
+  }
+  .admin-addform{
+    margin-left: 0;
+  }
+  .heightsec-admin{
+    height: 5%;
+  }
+  .banneradmin-sec{
+    margin-top: 80%;
   }
 }

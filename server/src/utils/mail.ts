@@ -6,7 +6,7 @@ dotenv.config();
 let apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 let apiKey = apiInstance.authentications["apiKey"];
-apiKey.apiKey = "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"
+apiKey.apiKey =process.env.MAIL_API_KEY;
 export const mail = async ({
   email,
   sub,

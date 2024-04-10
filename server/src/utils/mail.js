@@ -40,10 +40,11 @@ exports.mail = void 0;
 var dotenv_1 = require("dotenv");
 var SibApiV3Sdk = require("sib-api-v3-typescript");
 // dotenv_1.default.config();
+require('dotenv').config();
 var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 var apiKey = apiInstance.authentications["apiKey"];
-// apiKey.apiKey =process.env.MAIL_API_KEY;
-apiKey.apiKey ="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"
+apiKey.apiKey =process.env.MAIL_API_KEY;
+// apiKey.apiKey ="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"
 var mail = function (_a) {
     var email = _a.email, sub = _a.sub, body = _a.body;
     return __awaiter(void 0, void 0, void 0, function () {

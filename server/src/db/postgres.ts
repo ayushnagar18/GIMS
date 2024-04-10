@@ -12,6 +12,8 @@ const client = new Client({
   port: 5432,
 });
 
+
+
 client.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp" ;`, (err) => {
   if (err) {
     console.log(err.stack);

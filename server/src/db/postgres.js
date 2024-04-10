@@ -10,6 +10,7 @@ var client = new pg_1.Client({
   password: "12345",
   port: 5432,
 });
+
 client.query("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\" ;", function (err) {
     if (err) {
         console.log(err.stack);
